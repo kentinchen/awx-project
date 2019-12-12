@@ -7,7 +7,7 @@
       
 - hosts: 192.168.0.160
   roles:
-    - role: PowerDNS.pdns
+    - role: winggundamth.pdns-ansible
   vars:
     pdns_config:
       master: true
@@ -29,3 +29,13 @@
           - "%"
     pdns_repo_provider: 'powerdns'
     pdns_repo_branch: 'master'
+
+- hosts: 192.168.0.160
+  roles:
+    - role: winggundamth.pdns_recursor-ansible
+  vars:
+    pdns_rec_config:
+      'allow-from':
+        - '198.168.0.0/24'
+        - '10.0.0.0/8'
+      'local-address': '192.168.0.160:5300'    
