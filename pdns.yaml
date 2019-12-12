@@ -7,7 +7,7 @@
       
 - hosts: 192.168.0.160
   roles:
-    - role: winggundamth.pdns-ansible
+    - { role: PowerDNS.pdns }
   vars:
     pdns_config:
       master: true
@@ -27,12 +27,11 @@
         priv_password: 123456
         priv_host:
           - "localhost"
-    pdns_repo_provider: 'powerdns'
-    pdns_repo_branch: 'master'
+    pdns_install_repo: "{{ pdns_auth_powerdns_repo_41 }}"
 
 - hosts: 192.168.0.160
   roles:
-    - role: winggundamth.pdns_recursor-ansible
+    - { role: PowerDNS.pdns_recursor }
   vars:
     pdns_rec_config:
       'allow-from':
