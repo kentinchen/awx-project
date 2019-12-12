@@ -6,9 +6,5 @@ mysql_databases:
 mysql_users:
   - name: powerdns
     host: "%"
-    password: 123456
-    priv: "*.*:ALL"
-  - name: root
-    host: "%"
-    password: 123456
-    priv: "pdns.*:ALL"
+    password: powerdns
+    priv: "pdns.*:ALL,GRANT"

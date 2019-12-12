@@ -16,7 +16,7 @@
       local-address: '192.168.0.160'
     pdns_backends:
       gmysql:
-        host: 192.168.0.160
+        host: localhost
         port: 3306
         user: powerdns
         password: powerdns
@@ -26,7 +26,7 @@
         priv_user: root
         priv_password: 123456
         priv_host:
-          - "%"
+          - "localhost"
     pdns_repo_provider: 'powerdns'
     pdns_repo_branch: 'master'
 
