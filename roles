@@ -1,0 +1,7 @@
+- hosts: localhost
+  tasks:
+    - name: install roles
+      shell: |
+        ansible-galaxy install geerlingguy.mysql 
+        ansible-galaxy install PowerDNS.pdns
+        ansible-galaxy install PowerDNS.pdns_recursor
