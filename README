@@ -1,1 +1,3 @@
-A
+ansible-galaxy install geerlingguy.mysql
+ansible-galaxy install winggundamth.pdns-ansible
+ansible-galaxy install winggundamth.pdns_recursor-ansible

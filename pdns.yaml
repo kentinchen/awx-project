@@ -1,0 +1,31 @@
+- hosts: 192.168.0.160
+  become: yes
+  vars_files:
+    - vars/my_main.yml
+  roles:
+    - role: geerlingguy.mysql      
+      
+- hosts: 192.168.0.160
+  roles:
+    - role: PowerDNS.pdns
+  vars:
+    pdns_config:
+      master: true
+      slave: false
+      local-port: 5300
+      local-address: '192.168.0.160'
+    pdns_backends:
+      gmysql:
+        host: 192.168.0.160
+        port: 3306
+        user: powerdns
+        password: powerdns
+        dbname: pdns
+    pdns_backends_mysql_credential:
+      gmysql:
+        priv_user: root
+        priv_password: 123456
+        priv_host:
+          - "%"
+    pdns_repo_provider: 'powerdns'
+    pdns_repo_branch: 'master'
