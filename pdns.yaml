@@ -1,11 +1,10 @@
 - hosts: 192.168.0.160
   tasks:
     - name: install roles
-      command: chdir=/opt {{ item }}
-      with_items:
-      - ansible-galaxy install geerlingguy.mysql 
-      - ansible-galaxy install PowerDNS.pdns
-      - ansible-galaxy install PowerDNS.pdns_recursor
+      shell: |
+        ansible-galaxy install geerlingguy.mysql 
+        ansible-galaxy install PowerDNS.pdns
+        ansible-galaxy install PowerDNS.pdns_recursor
 - hosts: 192.168.0.160
   become: yes
   vars_files:
