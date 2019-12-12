@@ -1,3 +1,9 @@
 ansible-galaxy install geerlingguy.mysql
-ansible-galaxy install winggundamth.pdns-ansible
-ansible-galaxy install winggundamth.pdns_recursor-ansible
+ansible-galaxy install PowerDNS.pdns
+ansible-galaxy install PowerDNS.pdns_recursor 
+
+ansible-playbook pdns.yaml
+
+systemctl status pdns
+systemctl status pdns-recursor.service
+journalctl -xe
