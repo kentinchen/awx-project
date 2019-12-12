@@ -38,3 +38,4 @@
         - '198.168.0.0/24'
         - '10.0.0.0/8'
       'local-address': '192.168.0.160:53'    
+    pdns_rec_install_repo: "{{ pdns_rec_powerdns_repo_41 }}"
