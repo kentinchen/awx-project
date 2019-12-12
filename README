@@ -15,3 +15,6 @@ docker exec -it awx_task
 docker exec awx_task bash -c "cd /etc/ansible/roles/;ansible-galaxy install PowerDNS.pdns";
 docker exec awx_task bash -c "cd /etc/ansible/roles/;ansible-galaxy install bennojoy.ntp";
 docker exec -it awx_task bash
+
+git clone https://github.com/alicfeng/gogs-drone-docker.git
+cd gogs-drone-docker && docker-compose up -d
