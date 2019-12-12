@@ -7,3 +7,11 @@ ansible-playbook pdns.yaml
 systemctl status pdns
 systemctl status pdns-recursor.service
 journalctl -xe
+
+docker logs -f awx_task
+
+docker logs -f awx_task
+docker exec -it awx_task 
+docker exec awx_task bash -c "cd /etc/ansible/roles/;ansible-galaxy install PowerDNS.pdns";
+docker exec awx_task bash -c "cd /etc/ansible/roles/;ansible-galaxy install bennojoy.ntp";
+docker exec -it awx_task bash
